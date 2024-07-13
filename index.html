@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed & Challenge</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #3d3d3d; /* Cor de fundo semelhante ao Minecraft */
+            color: #ffffff; /* Cor do texto principal */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro translúcido */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #2ecc71; /* Cor do botão verde */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo dos cards */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #333333; /* Cor do texto nos cards */
+        }
+        .card-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .card-content {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .difficulty {
+            font-size: 1em;
+            color: #6c757d; /* Cor do texto de dificuldade */
+        }
+        #imagem-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="imagem-container">
+            <img class="logo" src="https://static1.textcraft.net/data1/e/b/ebf15144230ff3bf3f45779d0baa8d8d86ccd5d3f7726c812a994ab549757a744198409e4ac3a61bda39a3ee5e6b4b0d3255bfef95601890afd80709259eb63886b1a5268f085b638c3cbdfb.png" alt="Logo do Seed & Challenge">
+        </div>
+        <p>Bem-vindo ao Seed & Challenge! Aqui você pode gerar uma seed aleatória do Minecraft e um desafio para tornar sua experiência no jogo mais divertida e desafiadora.</p>
+        <button onclick="gerarSeedEDesafio()">Gerar Seed e Desafio</button>
+        <div class="card" id="seedCard"></div>
+        <div class="card" id="desafioCard"></div>
+        <div id="imagem"></div>
+    </div>
+
+    <script>
+        const desafios = [
+            { 
+                titulo: "Construa uma casa em cima de uma montanha.",
+                dificuldade: "Fácil"
+            },
+            {
+                titulo: "Colete 10 diamantes em uma hora.",
+                dificuldade: "Moderado"
+            },
+            {
+                titulo: "Construa uma fazenda automática.",
+                dificuldade: "Médio"
+            },
+            {
+                titulo: "Encontre e derrote o Ender Dragon.",
+                dificuldade: "Difícil"
+            }
+            // Outros desafios aqui...
+        ];
+
+        function gerarSeed() {
+            return Math.floor(Math.random() * 1000000000);
+        }
+
+        function gerarDesafio() {
+            const desafio = desafios[Math.floor(Math.random() * desafios.length)];
+            return `
+                <div class="card">
+                    <div class="card-title">Desafio:</div>
+                    <div class="card-content">${desafio.titulo}</div>
+                    <div class="difficulty">Dificuldade: ${desafio.dificuldade}</div>
+                </div>`;
+        }
+
+        function adicionarImagemPorLink(link) {
+            document.getElementById('imagem').innerHTML = `<img src="${link}" alt="Imagem adicionada">`;
+        }
+
+        function gerarSeedEDesafio() {
+            const seed = gerarSeed();
+            document.getElementById('seedCard').innerHTML = `
+                <div class="card">
+                    <div class="card-title">Seed:</div>
+                    <div class="card-content">${seed}</div>
+                </div>`;
+            document.getElementById('desafioCard').innerHTML = gerarDesafio();
+        }
+
+        // Exemplo de adição de imagem via código
+        const linkDaImagem = "https://static1.textcraft.net/data1/7/1/7133e5942bf6e8002abb1aa9aa64cb8701b31e3067493c44fae1f612056fbe8681ea1fce57af9423da39a3ee5e6b4b0d3255bfef95601890afd807095f13fe81e7448bda2efaeac0c0df67bb.png";
+        adicionarImagemPorLink(linkDaImagem);
+    </script>
+</body>
+</html>
