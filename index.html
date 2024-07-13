@@ -7,8 +7,9 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #3d3d3d; /* Cor de fundo semelhante ao Minecraft */
-            color: #ffffff; /* Cor do texto principal */
+            background-image: url('https://th.bing.com/th/id/R.249770b30b736b75d9f8f649cb8fff1a?rik=iAMmSPuUxxFrqQ&pid=ImgRaw&r=0');
+            background-size: cover;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -46,21 +47,23 @@
             margin: 20px 0;
         }
         .card {
-            background-color: rgba(255, 255, 255, 0.9); /* Fundo dos cards */
+            background-color: black; /* Cor de fundo dos cards */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
             margin-bottom: 20px;
             text-align: left;
-            color: #333333; /* Cor do texto nos cards */
+            color: #ffffff; /* Cor do texto nos cards */
         }
         .card-title {
             font-size: 1.2em;
             margin-bottom: 10px;
+            color: #2ecc71; /* Cor do título dos cards */
         }
         .card-content {
             font-size: 1.1em;
             margin-bottom: 10px;
+            color: #ffffff; /* Cor do conteúdo dos cards */
         }
         .difficulty {
             font-size: 1em;
@@ -91,7 +94,6 @@
         <button onclick="gerarSeedEDesafio()">Gerar Seed e Desafio</button>
         <div class="card" id="seedCard"></div>
         <div class="card" id="desafioCard"></div>
-        <div id="imagem"></div>
     </div>
 
     <script>
@@ -111,41 +113,144 @@
             {
                 titulo: "Encontre e derrote o Ender Dragon.",
                 dificuldade: "Difícil"
+            },
+            { 
+                titulo: "Explore uma dungeon subaquática.",
+                dificuldade: "Moderado"
+            },
+            {
+                titulo: "Construa uma cidade subterrânea.",
+                dificuldade: "Difícil"
+            },
+            {
+                titulo: "Crie um sistema de transporte com trilhos.",
+                dificuldade: "Médio"
+            },
+            {
+                titulo: "Encontre um bioma raro e construa uma base nele.",
+                dificuldade: "Fácil"
+            },
+            {
+                titulo: "Crie um jardim de flores de todas as cores.",
+                dificuldade: "Moderado"
+            },
+            {
+                titulo: "Domine a arte da redstone e crie um circuito complexo.",
+                dificuldade: "Difícil"
+            },
+            {
+                titulo: "Construa um farol em uma ilha isolada.",
+                dificuldade: "Médio"
+            },
+            {
+                titulo: "Crie um sistema de defesa automatizado para sua base.",
+                dificuldade: "Difícil"
+            },
+            {
+                titulo: "Cave até o fundo do mundo e construa uma base lá.",
+                dificuldade: "Médio"
+            },
+            {
+                titulo: "Explore um bioma de cogumelos e construa uma casa com fungos gigantes.",
+                dificuldade: "Fácil"
+            },
+            {
+                titulo: "Crie uma máquina automática de plantio e colheita.",
+                dificuldade: "Moderado"
+            },
+            {
+                titulo: "Derrote um chefe de bastão em menos de 5 minutos.",
+                dificuldade: "Difícil"
+            },
+            {
+                titulo: "Construa um portal do Nether em um local inusitado.",
+                dificuldade: "Fácil"
+            },
+            {
+                titulo: "Explore um bioma de coral e construa uma base subaquática.",
+                dificuldade: "Moderado"
+            },
+            {
+                titulo: "Crie uma galeria de arte com obras de arte em pixel art.",
+                dificuldade: "Médio"
+            },
+            {
+                titulo: "Encontre um templo oculto e recupere seus tesouros.",
+                dificuldade: "Difícil"
+            },
+            {
+                titulo: "Construa uma estátua gigante de um mob do Minecraft.",
+                dificuldade: "Moderado"
+            },
+            {
+                titulo: "Crie um sistema de teletransporte eficiente usando truques do Minecraft.",
+                dificuldade: "Difícil"
+            },
+            {
+                titulo: "Construa uma base flutuante no céu usando blocos de nuvem.",
+                dificuldade: "Médio"
+            },
+            {
+                titulo: "Domine a habilidade de montar cavalos e faça uma corrida com obstáculos.",
+                dificuldade: "Fácil"
+            },
+            {
+                titulo: "Explore um bioma de gelo e crie uma fortaleza de gelo.",
+                dificuldade: "Moderado"
+            },
+            {
+                titulo: "Crie um parque de diversões com montanhas-russas e jogos.",
+                dificuldade: "Difícil"
+            },
+            {
+                titulo: "Construa uma biblioteca encantada com todos os tipos de livros.",
+                dificuldade: "Médio"
+            },
+            {
+                titulo: "Encontre uma vila abandonada e restaure-a.",
+                dificuldade: "Fácil"
+            },
+            {
+                titulo: "Crie um zoológico com todos os animais do Minecraft.",
+                dificuldade: "Moderado"
+            },
+            {
+                titulo: "Derrote o Wither em menos de 10 minutos.",
+                dificuldade: "Difícil"
+            },
+            {
+                titulo: "Construa uma mansão assombrada com armadilhas e passagens secretas.",
+                dificuldade: "Médio"
+            },
+            {
+                titulo: "Explore uma floresta de bambu e construa uma casa na árvore de bambu.",
+                dificuldade: "Fácil"
             }
-            // Outros desafios aqui...
         ];
 
         function gerarSeed() {
-            return Math.floor(Math.random() * 1000000000);
+            return Math.floor(Math.random() * 10000000);
         }
 
         function gerarDesafio() {
-            const desafio = desafios[Math.floor(Math.random() * desafios.length)];
-            return `
-                <div class="card">
-                    <div class="card-title">Desafio:</div>
-                    <div class="card-content">${desafio.titulo}</div>
-                    <div class="difficulty">Dificuldade: ${desafio.dificuldade}</div>
-                </div>`;
-        }
-
-        function adicionarImagemPorLink(link) {
-            document.getElementById('imagem').innerHTML = `<img src="${link}" alt="Imagem adicionada">`;
+            const randomIndex = Math.floor(Math.random() * desafios.length);
+            return desafios[randomIndex];
         }
 
         function gerarSeedEDesafio() {
             const seed = gerarSeed();
-            document.getElementById('seedCard').innerHTML = `
-                <div class="card">
-                    <div class="card-title">Seed:</div>
-                    <div class="card-content">${seed}</div>
-                </div>`;
-            document.getElementById('desafioCard').innerHTML = gerarDesafio();
-        }
+            const desafio = gerarDesafio();
 
-        // Exemplo de adição de imagem via código
-        const linkDaImagem = "https://static1.textcraft.net/data1/7/1/7133e5942bf6e8002abb1aa9aa64cb8701b31e3067493c44fae1f612056fbe8681ea1fce57af9423da39a3ee5e6b4b0d3255bfef95601890afd807095f13fe81e7448bda2efaeac0c0df67bb.png";
-        adicionarImagemPorLink(linkDaImagem);
+            const seedCard = document.getElementById('seedCard');
+            const desafioCard = document.getElementById('desafioCard');
+
+            seedCard.innerHTML = `<p class="card-title">Seed Gerada:</p><p class="card-content">${seed}</p>`;
+            desafioCard.innerHTML = `<p class="card-title">Desafio:</p><p class="card-content">${desafio.titulo}</p><p class="difficulty">Dificuldade: ${desafio.dificuldade}</p>`;
+        }
     </script>
+
+    <div>
+        <img src="https://static1.textcraft.net/data1/7/1/7133e5942bf6e8002abb1aa9aa64cb8701b31e3067493c44fae1f612056fbe8681ea1fce57af9423da39a3ee5e6b4b0d3255bfef95601890afd80709f492094b287f2b9ad56c2a87ae0da534.png" alt="Imagem no final da interface">
+    </div>
 </body>
 </html>
